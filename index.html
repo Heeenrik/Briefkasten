@@ -20,17 +20,17 @@
     <img src="brief.png" alt="Briefumschlag" class="brief" id="brief" />
   </div>
 
-  <div id="bilder">
+
+    
+  </form>
+      <div id="bilder">
     <div id="vorne">
         <img src="vorne.png">
     </div>
     <div id="hinten">
-        <img src="hintergrund.png">
+        <img src="hinten.png">
     </div>
   </div>
-    
-  </form>
-    
 
   
 
@@ -68,7 +68,7 @@
     body {
       font-family: Helvetica, sans-serif;
       background: #f4f4f4;
-      padding: 2rem;
+      padding: 0rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -79,7 +79,7 @@
 
 #hinten {
   position: absolute;
-  top: 0;
+  top: -30vh;
   left: 0;
   width: 100vw;
   z-index: -10;
@@ -93,7 +93,7 @@
 
 #vorne {
   position: absolute;
-  top: 0;
+  top: -30vh;
   left: 0;
   width: 100vw;
   z-index: 1;
