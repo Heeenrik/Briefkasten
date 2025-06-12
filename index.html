@@ -52,12 +52,12 @@
   const Umschlag = document.getElementById('Umschlag');
 
   const Auswahl = {
-    Neutral: "Neutral.png",
-    Angry: "Angry.png",
-    Sad: "Sad.png",
-    Happy: "Happy.png",
-    Peppa: "Peppa.png",
-    Keta: "Keta.png",
+    Neutral: "neutral.png",
+    Angry: "angry.png",
+    Sad: "sad.png",
+    Happy: "happy.png",
+    Peppa: "peppa.png",
+    Keta: "keta.png",
   };
 
   // Umschlagbild bei Auswahl ändern
@@ -103,9 +103,14 @@
     }
 
     textarea,
-input,
+input {
+  font-size: 16px;
+}
+
 button {
   font-size: 16px;
+  top: 35vh;
+  position: absolute;
 }
 
 #hinten {
@@ -196,7 +201,7 @@ button {
 
   .brief {
     position: absolute;
-    top: 18vh;
+    top: 19vh;
     left: 50%;
     transform: translate(-50%, 0);
     width: 45vw;
