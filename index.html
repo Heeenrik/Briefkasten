@@ -11,6 +11,15 @@
     <div id="elemente">
         
         <textarea name="message" id="message" rows="5" placeholder="Nachricht schreiben" required></textarea>
+        <br/>
+        <select name="Umschlag" id="Umschlag">
+            <option value="Neutral">Neutral</option>
+            <option value="Angry">Sauer</option>
+            <option value="Sad">Traurig</option>
+            <option value="Happy">Glücklich</option>
+            <option value="Peppa">Peppa</option>
+            <option value="Keta">Keta-Peppa</option>
+        </select>
     </div>
 
 
@@ -40,24 +49,40 @@
 <script>
   const form = document.getElementById('briefForm');
   const brief = document.getElementById('brief');
+  const Umschlag = document.getElementById('Umschlag');
 
+  const Auswahl = {
+    Neutral: "Neutral.png",
+    Angry: "Angry.png",
+    Sad: "Sad.png",
+    Happy: "Happy.png",
+    Peppa: "Peppa.png",
+    Keta: "Keta.png",
+  };
+
+  // Umschlagbild bei Auswahl ändern
+  Umschlag.addEventListener('change', function () {
+    const selected = Umschlag.value;
+    const bildPfad = Auswahl[selected];
+
+    if (bildPfad) {
+      brief.src = bildPfad;
+    }
+  });
+
+  // Animation beim Absenden
   form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Textarea nach unten bewegen
     form.classList.add('sending');
-
-    // Brief sichtbar machen (sofort)
     brief.classList.add('visible');
 
-    // Nach 300ms Brief fallen lassen
     setTimeout(() => {
       brief.classList.add('fall');
     }, 300);
 
-    // (Optional) Formular absenden nach 1,5 Sekunden
     setTimeout(() => {
-       form.submit();
+      form.submit();
     }, 1500);
   });
 </script>
@@ -176,7 +201,7 @@ button {
     transform: translate(-50%, 0);
     width: 45vw;
     z-index: 2;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
     pointer-events: none;
   }
